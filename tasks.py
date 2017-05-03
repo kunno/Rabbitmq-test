@@ -78,7 +78,7 @@ def second_start():
 def nc_start():
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect(('192.168.41.31', 51112))
+        s.connect(('', 51112))
         while 1:
             data = ""
             while not data.endswith("\r\n"):
@@ -114,7 +114,7 @@ def usb_start():
 while connected == False:
     try:
         connection = pika.BlockingConnection(pika.ConnectionParameters(
-            host ='137.110.151.102'))
+            host =''))
         channel = connection.channel()
         second_channel = connection.channel()
         third_channel = connection.channel()
